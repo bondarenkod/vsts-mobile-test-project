@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Yellowstone.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Yellowstone">
+    <Grid>
+        <ListView
+            HasUnevenRows="True"
+            ItemsSource="{Binding Source}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="0,0,0,10">
+                        <Label
+                            FontSize="12"
+                            HorizontalOptions="Start"
+                            LineBreakMode="WordWrap"
+                            Text="{Binding Header}" />
+                        <Label
+                            FontSize="14"
+                            HorizontalOptions="End"
+                            LineBreakMode="WordWrap"
+                            Text="{Binding Content}" />
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
