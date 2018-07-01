@@ -10,18 +10,21 @@
             ItemsSource="{Binding Source}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Margin="0,0,0,10">
-                        <Label
-                            FontSize="12"
-                            HorizontalOptions="Start"
-                            LineBreakMode="WordWrap"
-                            Text="{Binding Header}" />
-                        <Label
-                            FontSize="14"
-                            HorizontalOptions="End"
-                            LineBreakMode="WordWrap"
-                            Text="{Binding Content}" />
-                    </StackLayout>
+                    <ViewCell>
+                        <StackLayout Margin="20,10,20,10">
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="Start"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding Title}" />
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="End"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding Content}" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
