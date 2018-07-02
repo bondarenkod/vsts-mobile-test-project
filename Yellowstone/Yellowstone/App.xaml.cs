@@ -21,18 +21,25 @@ namespace Yellowstone
 	{
 		public App()
 		{
-			VersionTracking.Track();
-
-			var config = ReadConfiguration();
-
-			var appcentersharedsecret = config["appcenter_appsecret"].ToString();
-
-			AppCenter.Start($"ios={appcentersharedsecret};android={appcentersharedsecret};uwp={appcentersharedsecret}",
-				typeof(Analytics),
-				typeof(Crashes),
-				typeof(Distribute));
-
 			InitializeComponent();
+
+			try
+			{
+				VersionTracking.Track();
+
+				var config = ReadConfiguration();
+
+				var appcentersharedsecret = config["appcenter_appsecret"].ToString();
+
+				AppCenter.Start($"ios={appcentersharedsecret};android={appcentersharedsecret};uwp={appcentersharedsecret}",
+					typeof(Analytics),
+					typeof(Crashes),
+					typeof(Distribute));
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+			}
 
 			MainPage = new MainPage();
 		}

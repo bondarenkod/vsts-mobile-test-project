@@ -15,7 +15,14 @@ namespace Yellowstone
 		{
 			InitializeComponent();
 
-			BindingContext = new MainPageViewModel();
+			try
+			{
+				BindingContext = new MainPageViewModel();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+			}
 		}
 	}
 

@@ -4,7 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Yellowstone">
-    <Grid>
+    <Grid BackgroundColor="YellowGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <ListView
             HasUnevenRows="True"
             ItemsSource="{Binding Source}">
